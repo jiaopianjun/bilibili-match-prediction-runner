@@ -1,4 +1,4 @@
-name: BILIBILI_HELPER
+name: bilibili_match_prediction
 
 on:
   push:
