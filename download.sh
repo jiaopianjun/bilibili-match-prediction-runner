@@ -1,4 +1,5 @@
 #!/bin/bash
+cat "./jar/jver"
 version=$(wget -qO- -t1 -T2 "https://api.github.com/repos/JunzhouLiu/bilibili-match-prediction/releases/latest" | grep "tag_name" | head -n 1 | awk -F ":" '{print $2}' | sed 's/\"//g;s/,//g;s/ //g;s/V//g')
 if [ "${version}" = "$(head -n 1 './jar/jver')" ];then exit ;fi
 wget -O "bilibili-match-prediction.zip" "https://github.com/JunzhouLiu/bilibili-match-prediction/releases/download/V${version}/bilibili-match-prediction-v${version}.zip"
